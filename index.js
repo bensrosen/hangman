@@ -27,6 +27,7 @@ while (wrongGuess<6) {
   if (word.indexOf(result) >= 0) {
     // Correct
     console.log("Correct");
+
   } else {
     // Not correct
     console.log("Not correct");
@@ -37,18 +38,9 @@ while (wrongGuess<6) {
 console.log("Game over");
 
 
-
-
-
 // Step 1 if correct, fill in the underscores with letters
-const word = "hello"; 
-//hardcoding hello//
-const answerArray = ["_", "_", "_", "_", "_"]; // I am hardcoding
-​
-console.log(
-  word[1]
-);
-​
+
+//const answerArray = ["_", "_", "_", "_", "_"]; // I am hardcoding
 const result = "l"; // what the user guessed
 ​
 for (let count = 0; count < word.length; count++) {
@@ -60,6 +52,13 @@ for (let count = 0; count < word.length; count++) {
 }
 ​
 console.log(answerArray);
+
+
+/*function add() {
+  let counter = 0;
+  function plus() {counter += 1;}
+  plus();   
+  return counter;*/
 ​
 // answerArray[1] = "e";
 // console.log(answerArray);
