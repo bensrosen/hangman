@@ -43,7 +43,7 @@ console.log("Game over");
 
 //const answerArray = ["_", "_", "_", "_", "_"]; // I am hardcoding
 const result = "l"; // what the user guessed
-​
+
 for (let count = 0; count < word.length; count++) {
   console.log(count);
   const letterInAnswer = word[count];
@@ -51,7 +51,7 @@ for (let count = 0; count < word.length; count++) {
   // You need to find out some condition of when you would make "answerArray[count] = result"
   answerArray[count] = result;
 }
-​
+
 console.log(answerArray);
 
 
@@ -60,12 +60,12 @@ console.log(answerArray);
   function plus() {counter += 1;}
   plus();   
   return counter;*/
-​
+
 // answerArray[1] = "e";
 // console.log(answerArray);
-​
-​
-​
+
+
+
 // Step 2 if no more underscores, stop the loop
 
 
