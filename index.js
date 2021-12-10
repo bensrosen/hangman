@@ -27,8 +27,9 @@ while (wrongGuess<6) {
   if (word.indexOf(result) >= 0) {
     // Correct
     console.log("Correct");
+// user guess correctly, now this happens : replace underscrore with correct letter 
 
-  } else {
+} else {
     // Not correct
     console.log("Not correct");
     wrongGuess++;
