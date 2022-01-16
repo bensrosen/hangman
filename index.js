@@ -1,73 +1,83 @@
-
-
 const prompt = require("readline-sync");
 const wordBank = require("./wordbank.js");
-  
-//create an array of words followed by an array of letters 
+
+//create an array of words followed by an array of letters
 //pick one random word from the wordBank
 let word = wordBank[Math.floor(Math.random() * wordBank.length)];
-console.log(word,"The Answer");
+console.log(word, "The Answer");
 //set up answerArray to show how many letters there are in the word using underscores _
-let answerArray = []; 
-let userGuess = prompt.question ("What letter are you guessing?");
-let guessLetter = ()=> {
-  return prompt.question("What letter are you guessing?");
-}
+let answerArray = [];
 for (let i = 0; i < word.length; i++) {
-    answerArray[i] = "_";  //for each letter in word there will be an underscore
+  // here
+  answerArray.push("_");
 }
+
+let guessLetter = () => {
+  return prompt.question("What letter are you guessing?");
+};
+const result = guessLetter();
+console.log("result", word.indexOf(result));
+//create store in a variable and integrate into if statement
+
 // create a variable to inform how many remainingLetters there are to be guessed
-let remainingLetters = word.length; 
+//let remainingLetters = word.length;
 let wrongGuess = 0;
-while (wrongGuess<6) {
-  display="Keep guessing";
+while (wrongGuess < 6) {
+  display = "Keep guessing";
   console.log(answerArray.join(""));
   const result = guessLetter();
-  console.log("result", word.indexOf(result))
+  console.log("result", word.indexOf(result));
   if (word.indexOf(result) >= 0) {
-    // Correct
     console.log("Correct");
-// user guess correctly, now this happens : replace underscrore with correct letter 
+  } else wrongGuess++;
 
-} else {
-    // Not correct
-    console.log("Not correct");
-    wrongGuess++;
+  //line 42 is replacing underscores with letter guessed if its correct
+
+  // user guess correctly, now this happens : replace underscrore with correct letter
+  for (let counter = 0; counter < word.length; counter++) {
+    // The letter in position ____ ("counter"), is that what the user guessed? ("l")
+    let letterWeAreComparingTo = word.charAt(counter);
+    if (result === letterWeAreComparingTo) {
+      // How do we subsitute?
+      answerArray[counter] = result;
+    }
   }
+  const guessAgain = answerArray.includes("_");
+  console.log(guessAgain, "has underscores");
+
+if (guessAgain === true) {
+  console.log("try again");
+} else{ console.log("You Win! Game Over!");
+break;}
 }
-// After 6 incorrect guesses
-console.log("Game over");
+// if number of "not correct" === 6 then "Game Over, next round"
+if (wrongGuess === 5) {
+  console.log("Game Over! Begin New Round");
+}
+//console.error();
 
-
-// Step 1 if correct, fill in the underscores with letters
-
-//const answerArray = ["_", "_", "_", "_", "_"]; // I am hardcoding
-const result = "l"; // what the user guessed
+// Step 1 if correct, fill in the underscores with letter
 
 for (let count = 0; count < word.length; count++) {
-  console.log(count);
-  const letterInAnswer = word[count];
-  console.log(letterInAnswer);
-  // You need to find out some condition of when you would make "answerArray[count] = result"
+    const letterInAnswer = word[count];
+    // You need to find out some condition of when you would make "answerArray[count] = result"
   answerArray[count] = result;
 }
 
-console.log(answerArray);
+/*if (gameOver===true) {
+  console.log("Begin new round")
+}
 
 
-/*function add() {
-  let counter = 0;
-  function plus() {counter += 1;}
-  plus();   
-  return counter;*/
+
+
+
+//console.log(answerArray);
 
 // answerArray[1] = "e";
 // console.log(answerArray);
 
-
-
 // Step 2 if no more underscores, stop the loop
-
 
 //if i=true console.log("Correct, guess again")
 //what to we need to repeat ?
@@ -90,3 +100,18 @@ numbrWrong >= 6 = return "Game Over"
 if wordTrue = return "You Win" 
 
 counter=0*/
+/*if correct replace underscore with guessLetter
+if (guess === correct) {
+  answerArray =[] 
+  function replace (underscore) {
+if guess
+    return correctLetter
+  else (go again)  
+    console.error();  }
+  var newArray = answerArray.map(replace);
+  }
+  return guess
+}*/
+
+
+/*figure out why its not registering the first letter*/
