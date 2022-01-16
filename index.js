@@ -15,8 +15,7 @@ for (let i = 0; i < word.length; i++) {
 let guessLetter = () => {
   return prompt.question("What letter are you guessing?");
 };
-const result = guessLetter();
-console.log("result", word.indexOf(result));
+
 //create store in a variable and integrate into if statement
 
 // create a variable to inform how many remainingLetters there are to be guessed
@@ -51,67 +50,7 @@ if (guessAgain === true) {
 break;}
 }
 // if number of "not correct" === 6 then "Game Over, next round"
-if (wrongGuess === 5) {
+if (wrongGuess === 6) {
   console.log("Game Over! Begin New Round");
 }
-//console.error();
 
-// Step 1 if correct, fill in the underscores with letter
-
-for (let count = 0; count < word.length; count++) {
-    const letterInAnswer = word[count];
-    // You need to find out some condition of when you would make "answerArray[count] = result"
-  answerArray[count] = result;
-}
-
-/*if (gameOver===true) {
-  console.log("Begin new round")
-}
-
-
-
-
-
-//console.log(answerArray);
-
-// answerArray[1] = "e";
-// console.log(answerArray);
-
-// Step 2 if no more underscores, stop the loop
-
-//if i=true console.log("Correct, guess again")
-//what to we need to repeat ?
-
-//if i =true console.log ( "you are correct" + "guess again");
-
-//need to keep track of when user guesses wrong
-/* const words = ["fat", "lazy", "hungry"];
-let randomNum = Math.floor(Math.random() *words.length);
-let choosenWord = word[random];
-console.log(choosenWord)
-
-/*if letter is part of The Answer then display Correct , go again 
-if word.letter = true then console.log("Correct, go again")  
-if letter is a
-/*if guess is true = Right , go again
-if 
-else guess is false = Wrong, guess again
-numbrWrong >= 6 = return "Game Over"
-if wordTrue = return "You Win" 
-
-counter=0*/
-/*if correct replace underscore with guessLetter
-if (guess === correct) {
-  answerArray =[] 
-  function replace (underscore) {
-if guess
-    return correctLetter
-  else (go again)  
-    console.error();  }
-  var newArray = answerArray.map(replace);
-  }
-  return guess
-}*/
-
-
-/*figure out why its not registering the first letter*/
