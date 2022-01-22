@@ -49,8 +49,11 @@ if (guessAgain === true) {
 } else{ console.log("You Win! Game Over!");
 break;}
 }
+
 // if number of "not correct" === 6 then "Game Over, next round"
 if (wrongGuess === 6) {
-  console.log("Game Over! Begin New Round");
+  console.log("Game Over !Begin New Round");
 }
+
+console.log(" " Games won  " " "Total Games Played")
 
