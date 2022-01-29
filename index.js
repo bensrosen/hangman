@@ -12,6 +12,7 @@ for (let i = 0; i < word.length; i++) {
   answerArray.push("_");
 }
 
+// let Letters =
 let guessLetter = () => {
   return prompt.question("What letter are you guessing?");
 };
@@ -30,6 +31,70 @@ while (wrongGuess < 6) {
     console.log("Correct");
   } else wrongGuess++;
 
+  let Letters = [
+    "A",
+    "a",
+    "B",
+    "b",
+    "C",
+    "c",
+    "D",
+    "E",
+    "F",
+    "G",
+    "H",
+    "I",
+    "J",
+    "K",
+    "L",
+    "M",
+    "N",
+    "O",
+    "P",
+    "Q",
+    "R",
+    "S",
+    "T",
+    "U",
+    "V",
+    "W",
+    "X",
+    "Y",
+    "Z",
+    "e",
+    "f",
+    "g",
+    "h",
+    "i",
+    "j",
+    "k",
+    "l",
+    "m",
+    "n",
+    "o",
+    "p",
+    "q",
+    "r",
+    "s",
+    "t",
+    "u",
+    "v",
+    "w",
+    "x",
+    "y",
+    "z",
+  ];
+  let isLetters = Letters.includes("A");
+
+  console.log(Letters);
+  console.log(isLetters);
+  /* let Letters = ["A","a","B","b","C","c","D","E","F","G","H","I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T" , "U", "V", "W", "X","Y","Z","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"];
+  if (letters=A-Z,a-z) return true
+  else return false 
+  if [A-Za-z].test(word)
+  [^0-9]=false*/
+  console.log(Letters.includes("$"));
+
   //line 42 is replacing underscores with letter guessed if its correct
 
   // user guess correctly, now this happens : replace underscrore with correct letter
@@ -44,10 +109,12 @@ while (wrongGuess < 6) {
   const guessAgain = answerArray.includes("_");
   console.log(guessAgain, "has underscores");
 
-if (guessAgain === true) {
-  console.log("try again");
-} else{ console.log("You Win! Game Over!");
-break;}
+  if (guessAgain === true) {
+    console.log("try again");
+  } else {
+    console.log("You Win! Game Over!");
+    break;
+  }
 }
 
 // if number of "not correct" === 6 then "Game Over, next round"
@@ -55,5 +122,8 @@ if (wrongGuess === 6) {
   console.log("Game Over !Begin New Round");
 }
 
-console.log(" " Games won  " " "Total Games Played")
+let gamesPlayed = 0;
 
+/* */
+
+//if guessLetter(![A-Z,a-z]).test(answer)
